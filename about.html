@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About – Ribo Analytics</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-gray-900 text-gray-50">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <!-- Logo -->
+        <a href="index.html" class="text-xl font-bold text-orange-500">
+          Ribo Analytics
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex md:items-center md:gap-8">
+          <a href="index.html" class="text-sm font-medium text-gray-300 hover:text-orange-500 transition-colors">Home</a>
+          <a href="services.html" class="text-sm font-medium text-gray-300 hover:text-orange-500 transition-colors">Services</a>
+          <a href="case-studies.html" class="text-sm font-medium text-gray-300 hover:text-orange-500 transition-colors">Case Studies</a>
+          <a href="about.html" class="text-sm font-medium text-gray-50 hover:text-orange-500 transition-colors">About</a>
+          <a href="contact.html" class="inline-block rounded bg-orange-500 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-orange-600">
+            Get in Touch
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-300 hover:text-orange-500 transition-colors" aria-label="Toggle menu">
+          <svg id="menu-icon" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg id="close-icon" class="h-6 w-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-800 bg-gray-900">
+      <div class="px-4 py-4 space-y-3">
+        <a href="index.html" class="block text-sm font-medium text-gray-300 hover:text-orange-500 transition-colors">Home</a>
+        <a href="services.html" class="block text-sm font-medium text-gray-300 hover:text-orange-500 transition-colors">Services</a>
+        <a href="case-studies.html" class="block text-sm font-medium text-gray-300 hover:text-orange-500 transition-colors">Case Studies</a>
+        <a href="about.html" class="block text-sm font-medium text-gray-50 hover:text-orange-500 transition-colors">About</a>
+        <a href="contact.html" class="block rounded bg-orange-500 px-4 py-2 text-sm font-medium text-white text-center transition-colors hover:bg-orange-600">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Script -->
+  <script>
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+  </script>
+
+  <!-- About Header -->
+  <section class="bg-gray-900 pt-16">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl text-center">
+        <h1 class="text-3xl font-bold text-gray-50 sm:text-4xl">
+          About
+        </h1>
+        <p class="mt-4 text-gray-300 sm:text-lg">
+          Helping businesses make better decisions with data.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Content -->
+  <section class="bg-gray-950">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl">
+        <div class="prose prose-invert prose-orange">
+          <p class="text-lg text-gray-300">
+            <!-- Add your bio/story here -->
+            I'm a freelance analytics consultant helping businesses transform their data into actionable insights.
+          </p>
+          <p class="mt-4 text-gray-300">
+            <!-- Add more about your background, approach, etc. -->
+            With experience across multiple industries, I specialize in creating custom dashboards, automated reporting systems, and in-depth analysis that drives real business outcomes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-gray-900">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 class="text-2xl font-semibold text-gray-50 sm:text-3xl">
+          Let's work together
+        </h2>
+        <p class="mt-4 text-gray-300">
+          Ready to unlock the potential in your data?
+        </p>
+        <a
+          href="contact.html"
+          class="mt-6 inline-block rounded bg-orange-500 px-6 py-3 font-medium text-white transition-colors hover:bg-orange-600"
+        >
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

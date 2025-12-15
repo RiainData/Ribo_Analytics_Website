@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Freelance Analytics & Dashboards – Ríain</title>
+
+  <style>
+    /* From Uiverse.io by alexruix */ 
+    .card {
+      color: #1b1b1b;
+      width: 100%;
+      height: 220px;
+      position: relative;
+      outline: 4px solid #f5f5f5;
+      border-radius: 8px;
+      line-height: 150%;
+      padding: 16px;
+      background: linear-gradient(to top, #ff930f, #ffcc33);
+      transition: background-color 1s ease-in-out;
+      overflow: hidden;
+    }
+    
+    .card-front,
+    .card-back {
+      position: absolute;
+      width: 100%;
+      text-align: left;
+      transition: transform 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+    }
+    
+    .card-front {
+      bottom: 16px;
+      left: 0;
+    }
+    
+    .card-back {
+      transform: translateX(120%);
+    }
+    
+    .title {
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+    
+    .title::after {
+      content: "";
+      display: block;
+      width: 50%;
+      border-radius: 50%;
+      height: 2px;
+      margin: 2px 0;
+      background-color: #1b1b1b;
+    }
+    
+    .card:hover {
+      background-color: #1b1b1b25;
+    }
+    
+    .card:hover .card-front {
+      transform: translateX(-100%);
+    }
+    
+    .card:hover .card-back {
+      transform: translateX(0);
+    }
+    </style>
+    
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-gray-900 text-gray-50">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <!-- Logo -->
+        <a href="index.html" class="text-xl font-bold text-orange-500">
+          Ribo Analytics
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex md:items-center md:gap-8">
+          <a href="index.html" class="text-sm font-medium text-gray-50 hover:text-orange-500 transition-colors">Home</a>
+          <a href="services.html" class="text-sm font-medium text-gray-300 hover:text-orange-500 transition-colors">Services</a>
+          <a href="case-studies.html" class="text-sm font-medium text-gray-300 hover:text-orange-500 transition-colors">Case Studies</a>
+          <a href="about.html" class="text-sm font-medium text-gray-300 hover:text-orange-500 transition-colors">About</a>
+          <a href="contact.html" class="inline-block rounded bg-orange-500 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-orange-600">
+            Get in Touch
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-300 hover:text-orange-500 transition-colors" aria-label="Toggle menu">
+          <svg id="menu-icon" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg id="close-icon" class="h-6 w-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-800 bg-gray-900">
+      <div class="px-4 py-4 space-y-3">
+        <a href="index.html" class="block text-sm font-medium text-gray-50 hover:text-orange-500 transition-colors">Home</a>
+        <a href="services.html" class="block text-sm font-medium text-gray-300 hover:text-orange-500 transition-colors">Services</a>
+        <a href="case-studies.html" class="block text-sm font-medium text-gray-300 hover:text-orange-500 transition-colors">Case Studies</a>
+        <a href="about.html" class="block text-sm font-medium text-gray-300 hover:text-orange-500 transition-colors">About</a>
+        <a href="contact.html" class="block rounded bg-orange-500 px-4 py-2 text-sm font-medium text-white text-center transition-colors hover:bg-orange-600">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Script -->
+  <script>
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+  </script>
+
+  <!-- Hero Section -->
+  <section class="bg-gray-900 pt-16 lg:grid lg:h-screen lg:place-content-center">
+    <div class="mx-auto w-screen max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
+      <div class="mx-auto max-w-prose text-center">
+        <h1 class="text-4xl font-bold text-gray-50 sm:text-5xl">
+          Build a smarter view of your business with Ribo Analytics.
+          <br />
+          <strong class="text-orange-500">Dashboards. Analytics. Research.</strong>
+        </h1>
+
+        <p class="mt-4 text-base text-pretty text-gray-300 sm:text-lg/relaxed">
+          From automated reporting to deep data insights, I help teams see patterns, trends,
+          and opportunities hidden in their data.
+        </p>
+
+        <div class="mt-6 flex justify-center gap-4 sm:mt-8">
+          <a
+            class="inline-block rounded border border-orange-500 bg-orange-500 px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-orange-600"
+            href="contact.html"
+          >
+            Book a Free Intro Call
+          </a>
+
+          <a
+            class="inline-block rounded border border-gray-700 px-5 py-3 font-medium text-gray-200 shadow-sm transition-colors hover:bg-gray-800 hover:text-white"
+            href="services.html"
+          >
+            See Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Showcase Section -->
+  <section class="bg-gray-950">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+
+      <!-- Row 1: Data Dashboards & Analytics -->
+      <div class="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
+        <!-- Image -->
+        <div class="order-2 lg:order-1">
+          <div class="aspect-video rounded-lg border border-gray-800 bg-gray-800 overflow-hidden shadow-2xl">
+            <img src="assets/img/dashboard.jpg" alt="Analytics dashboard showing user metrics, load times, and session data" class="w-full h-full object-cover" />
+          </div>
+        </div>
+        <!-- Text -->
+        <div class="order-1 lg:order-2">
+          <h2 class="text-2xl font-semibold text-gray-50 sm:text-3xl">
+            Data Dashboards & Analytics
+          </h2>
+          <p class="mt-4 text-gray-300 sm:text-lg/relaxed">
+            Custom dashboards built to reveal performance, highlight trends, and simplify your workflow — not overwhelm it. I design reporting that your team will actually use, tied directly to the questions and decisions that matter most.
+          </p>
+          <a href="services.html" class="mt-6 inline-flex items-center text-orange-500 hover:text-orange-400 transition-colors">
+            Learn more
+            <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Row 2: ML Modeling -->
+      <div class="mt-16 grid gap-8 lg:grid-cols-2 lg:gap-16 items-center lg:mt-24">
+        <!-- Text -->
+        <div>
+          <h2 class="text-2xl font-semibold text-gray-50 sm:text-3xl">
+            ML Modeling
+          </h2>
+          <p class="mt-4 text-gray-300 sm:text-lg/relaxed">
+            From predictive analytics to classification models, I build machine learning solutions that turn your historical data into forward-looking insights. Custom models trained on your data, deployed and documented for your team.
+          </p>
+          <a href="services.html" class="mt-6 inline-flex items-center text-orange-500 hover:text-orange-400 transition-colors">
+            Learn more
+            <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+        <!-- Image -->
+        <div>
+          <div class="aspect-video rounded-lg border border-gray-800 bg-gray-800 overflow-hidden shadow-2xl">
+            <img src="assets/img/machine-learning.jpg" alt="Machine learning neural network visualization with circuit patterns" class="w-full h-full object-cover" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 3: Geospatial Data Science -->
+      <div class="mt-16 grid gap-8 lg:grid-cols-2 lg:gap-16 items-center lg:mt-24">
+        <!-- Image -->
+        <div class="order-2 lg:order-1">
+          <div class="aspect-video rounded-lg border border-gray-800 bg-gray-800 overflow-hidden shadow-2xl">
+            <img src="assets/img/geospatial.jpg" alt="Geospatial data visualization map of Europe with data points" class="w-full h-full object-cover" />
+          </div>
+        </div>
+        <!-- Text -->
+        <div class="order-1 lg:order-2">
+          <h2 class="text-2xl font-semibold text-gray-50 sm:text-3xl">
+            Geospatial Data Science
+          </h2>
+          <p class="mt-4 text-gray-300 sm:text-lg/relaxed">
+            Location matters. I specialize in mapping, spatial analysis, and geographic data visualization that helps you understand the where behind your data — from market analysis to route optimization to territory planning.
+          </p>
+          <a href="services.html" class="mt-6 inline-flex items-center text-orange-500 hover:text-orange-400 transition-colors">
+            Learn more
+            <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+
+</html>
